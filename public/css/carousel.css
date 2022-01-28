@@ -1,0 +1,40 @@
+.slide {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide-image {
+  width: inherit;
+}
+
+.previous {
+  position: absolute;
+  bottom: 50%;
+  left: 3rem;
+  z-index: 1;
+}
+
+.next {
+  position: absolute;
+  bottom: 50%;
+  right: 3rem;
+  z-index: 1;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.image.active {
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+img {
+  width: 100%;
+}
