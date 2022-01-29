@@ -1,13 +1,13 @@
 // import Head from 'next/head'
 
-import Carousel from "../components/Carousel";
+import MainProduct from "../components/MainProduct";
 import Navigation from "../components/Navigation";
 
 export default function Home() {
   return (
     <div>
       <Navigation />
-      <Carousel />
+      <MainProduct />
     </div>
   );
 }

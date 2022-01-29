@@ -3,14 +3,15 @@
 @import url("../public/css/variable.css");
 @import url("../public/css/navigation.css");
 @import url("../public/css/carousel.css");
+@import url("../public/css/product_desc.css");
 
 body {
-  padding: 0;
-  margin: 0;
   font-family: "Kumbh Sans", sans-serif;
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
