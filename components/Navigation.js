@@ -15,7 +15,7 @@ function Navigation() {
 
   return (
     <Fragment>
-      <nav className="container navigation">
+      <nav className="navigation">
         <div className="navigation-mobile-logo-menu">
           <div className="navigation-mobile" onClick={displayMobileMenu}>
             <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">

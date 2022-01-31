@@ -4,10 +4,10 @@ import ProductDesc from "./ProductDesc";
 
 function MainProduct() {
   return (
-    <div>
+    <main className="main-product">
       <Carousel />
       <ProductDesc />
-    </div>
+    </main>
   );
 }
 

@@ -2,20 +2,18 @@
 
 @import url("../public/css/variable.css");
 @import url("../public/css/navigation.css");
+@import url("../public/css/main_product.css");
 @import url("../public/css/carousel.css");
 @import url("../public/css/product_desc.css");
 
-body {
-  font-family: "Kumbh Sans", sans-serif;
-}
-
 * {
+  font-family: "Kumbh Sans", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.container {
+/* .container {
   width: 20.3125rem;
   margin: 0 auto;
   position: relative;
@@ -26,4 +24,4 @@ body {
     width: 69.375rem;
     margin: 0 auto;
   }
-}
+} */

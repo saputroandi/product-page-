@@ -35,6 +35,11 @@ function Carousel() {
     setCurrent(current == 0 ? length - 1 : current - 1);
   };
 
+  // const changeImage = (e) => {
+  //   const choosenImage = e.target.getAttribute("value");
+  //   setCurrent(choosenImage);
+  // };
+
   return (
     <section className="slide">
       <div className="previous" onClick={prevSlide}>
@@ -77,6 +82,21 @@ function Carousel() {
           );
         })}
       </div>
+      {/* <div className="thumbnail">
+        {sliderData.map((slide, index) => {
+          return (
+            <div key={slide.id} onClick={changeImage}>
+              <img
+                className="image-thumbnail"
+                key={slide.id}
+                src={"images/" + slide.imageThumbnail}
+                alt={slide.imageThumbnail}
+                value={slide.id}
+              />
+            </div>
+          );
+        })}
+      </div> */}
     </section>
   );
 }

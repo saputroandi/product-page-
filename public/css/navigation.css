@@ -1,4 +1,7 @@
 .navigation {
+  width: 20.3125rem;
+  margin: 0 auto;
+  position: relative;
   display: flex;
   height: 6.875rem;
   align-items: center;
@@ -61,6 +64,13 @@ aside {
   background-color: var(--white);
 }
 
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
 .mobile-menu-list > p {
   font-weight: 700;
 }
@@ -75,6 +85,9 @@ aside {
 }
 
 @media only screen and (min-width: 768px) {
+  .navigation {
+    width: 69.375rem;
+  }
   .navigation-mobile-logo-menu {
     gap: 3.4375rem;
   }
