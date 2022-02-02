@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ActiveImage from "./ActiveImage";
 
 const sliderData = [
   {
@@ -25,20 +26,23 @@ const sliderData = [
 
 function Carousel() {
   const [current, setCurrent] = useState(0);
+  const [currentImage, setCurrentImage] = useState(sliderData[0]);
   const length = sliderData.length;
 
   const nextSlide = () => {
     setCurrent(current == length - 1 ? 0 : current + 1);
+    setCurrentImage(sliderData[current]);
   };
 
   const prevSlide = () => {
     setCurrent(current == 0 ? length - 1 : current - 1);
+    setCurrentImage(sliderData[current]);
   };
 
-  // const changeImage = (e) => {
-  //   const choosenImage = e.target.getAttribute("value");
-  //   setCurrent(choosenImage);
-  // };
+  const changeImage = (e) => {
+    const choosenImage = e.target.getAttribute("value");
+    setCurrentImage(sliderData[choosenImage]);
+  };
 
   return (
     <section className="slide">
@@ -65,24 +69,11 @@ function Carousel() {
         </svg>
       </div>
       <div className="slide-image">
-        {sliderData.map((slide, index) => {
-          return (
-            <div
-              key={slide.id}
-              className={index === current ? "image active" : "image"}
-            >
-              {index === current && (
-                <img
-                  key={slide.id}
-                  src={"images/" + slide.image}
-                  alt={slide.image}
-                />
-              )}
-            </div>
-          );
-        })}
+        <div className="image active">
+          <ActiveImage imageObj={currentImage} />
+        </div>
       </div>
-      {/* <div className="thumbnail">
+      <div className="thumbnail">
         {sliderData.map((slide, index) => {
           return (
             <div key={slide.id} onClick={changeImage}>
@@ -91,12 +82,12 @@ function Carousel() {
                 key={slide.id}
                 src={"images/" + slide.imageThumbnail}
                 alt={slide.imageThumbnail}
-                value={slide.id}
+                value={index}
               />
             </div>
           );
         })}
-      </div> */}
+      </div>
     </section>
   );
 }
