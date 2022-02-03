@@ -69,7 +69,7 @@ function Carousel() {
         </svg>
       </div>
       <div className="slide-image">
-        <div className="image active">
+        <div className="image">
           <ActiveImage imageObj={currentImage} />
         </div>
       </div>

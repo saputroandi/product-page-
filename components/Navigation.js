@@ -47,7 +47,7 @@ function Navigation() {
           <svg
             width="22"
             height="20"
-            className="cart"
+            className="cart-icon"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path

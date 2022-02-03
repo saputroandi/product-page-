@@ -37,22 +37,20 @@
 }
 
 .image {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition-duration: 1s ease;
-}
-
-.image.active {
-  opacity: 1;
-  transition-duration: 1s;
+  align-items: center; */
+  position: relative;
+  padding-bottom: 100%;
+  height: 0;
+  background: #eee;
 }
 
 .image > img {
   width: 100%;
   height: 100%;
-  background-color: var(--light-grayish-blue);
+  position: absolute;
+  display: block;
 }
 
 .thumbnail {

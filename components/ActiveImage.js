@@ -1,13 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 function ActiveImage(props) {
-  //   useEffect(() => {
-  //     console.log(props);
-
-  //     return () => {
-  //       console.log("kabeh");
-  //     };
-  //   }, [props]);
   return (
     <img
       key={props.imageObj.id}

@@ -39,7 +39,7 @@ function ProductDesc() {
           <div className="fill-cart">
             <svg
               width="22"
-              className="cart"
+              className="cart-icon"
               height="20"
               xmlns="http://www.w3.org/2000/svg"
             >
