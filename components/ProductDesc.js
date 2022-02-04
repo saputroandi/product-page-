@@ -1,6 +1,13 @@
 import React from "react";
+import { useContext } from "react/cjs/react.development";
+import { CartContext } from "../context/CartContext";
+
+// const handleCart = (cart, setCart) => {
+//   console.log(cart);
+// };
 
 function ProductDesc() {
+  // const { cart, setCart } = useContext(CartContext);
   return (
     <section className="product">
       <div className="product-header">
@@ -35,7 +42,10 @@ function ProductDesc() {
           <p className="qty">0</p>
           <div className="button-inc">+</div>
         </div>
-        <div className="product-add-cart">
+        <div
+          className="product-add-cart"
+          // onClick={() => handleCart(cart, setCart)}
+        >
           <div className="fill-cart">
             <svg
               width="22"

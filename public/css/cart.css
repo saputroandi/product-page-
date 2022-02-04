@@ -8,6 +8,7 @@
   background-color: var(--white);
   z-index: 1;
   border-radius: 1rem;
+  box-shadow: 5px 5px 10px var(--black);
 }
 
 .cart-header {
@@ -69,4 +70,11 @@
   font-weight: 700;
   background-color: var(--orange);
   color: var(--white);
+}
+
+@media only screen and (min-width: 768px) {
+  .cart {
+    width: 22.5rem;
+    left: 45rem;
+  }
 }
