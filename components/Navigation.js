@@ -63,7 +63,7 @@ function Navigation() {
             {cart.length >= 1 && <span className="badge">{cart.length}</span>}
           </div>
           <div className="avatar">
-            <img src="images/image-avatar.png" />
+            <img src="images/image-avatar.png" alt="avatar image" />
           </div>
         </div>
       </nav>
