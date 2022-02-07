@@ -17,24 +17,20 @@ function ProductDesc() {
       (productInsideCart) => productInsideCart._id === product._id
     );
 
-    const sameQty = cart.find(
-      (productInsideCart) => productInsideCart.qty === product.qty
-    );
-
-    if (!sameId && !sameQty && product._id != null) {
+    if (!sameId && product._id != null) {
       setCart([...cart, product]);
       setProduct(initialProduct);
     }
   }, [product]);
 
-  const handleProductMinus = () => {
+  const handleProductMinus = (e) => {
     if (product.qty <= 1) {
       return setProduct({ ...product, qty: 1 });
     }
     setProduct({ ...product, qty: product.qty - 1 });
   };
 
-  const handleProductPlus = () => {
+  const handleProductPlus = (e) => {
     setProduct({ ...product, qty: product.qty + 1 });
   };
 
@@ -50,12 +46,18 @@ function ProductDesc() {
   };
 
   const handleCart = () => {
-    setProduct({
-      ...product,
-      _id: makeId(10),
-      name: "Fall Limited Edition Sneakers",
-      price: 250,
-    });
+    const sameQty = cart.find(
+      (productInsideCart) => productInsideCart.qty === product.qty
+    );
+
+    if (!sameQty) {
+      setProduct({
+        ...product,
+        _id: makeId(10),
+        name: "Fall Limited Edition Sneakers",
+        price: 250,
+      });
+    }
   };
 
   return (
