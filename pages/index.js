@@ -11,14 +11,14 @@ export default function Home() {
   const [cartVisible, setCartVisible] = useState(false);
 
   return (
-    // <CartProvider>
-    <CartVisibleContext.Provider value={{ cartVisible, setCartVisible }}>
-      <div>
-        <Navigation />
-        <MainProduct />
-        {cartVisible && <Cart />}
-      </div>
-    </CartVisibleContext.Provider>
-    // </CartProvider>
+    <CartProvider>
+      <CartVisibleContext.Provider value={{ cartVisible, setCartVisible }}>
+        <div>
+          <Navigation />
+          <MainProduct />
+          {cartVisible && <Cart />}
+        </div>
+      </CartVisibleContext.Provider>
+    </CartProvider>
   );
 }

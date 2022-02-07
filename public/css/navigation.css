@@ -32,6 +32,7 @@
 
 .navigation-cart-avatar > .cart-icon {
   position: relative;
+  cursor: pointer;
 }
 
 .cart-icon > .badge {
@@ -47,6 +48,7 @@
 .avatar > img {
   width: 3.125rem;
   height: 3.125rem;
+  cursor: pointer;
 }
 
 aside {
@@ -113,6 +115,10 @@ aside {
   .navigation-menu {
     display: inherit;
     gap: 2.1875rem;
+  }
+
+  .navigation-menu > p {
+    cursor: pointer;
   }
 
   .navigation-cart-avatar {

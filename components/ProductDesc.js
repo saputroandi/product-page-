@@ -1,13 +1,63 @@
-import React from "react";
-import { useContext } from "react/cjs/react.development";
-import { CartContext } from "../context/CartContext";
+import React, { useEffect, useState } from "react";
+import { useCart } from "../context/CartContext";
 
-// const handleCart = (cart, setCart) => {
-//   console.log(cart);
-// };
+const initialProduct = {
+  _id: null,
+  name: null,
+  qty: 1,
+  price: 0,
+};
 
 function ProductDesc() {
-  // const { cart, setCart } = useContext(CartContext);
+  const [product, setProduct] = useState(initialProduct);
+  const { cart, setCart } = useCart();
+
+  useEffect(() => {
+    const sameId = cart.find(
+      (productInsideCart) => productInsideCart._id === product._id
+    );
+
+    const sameQty = cart.find(
+      (productInsideCart) => productInsideCart.qty === product.qty
+    );
+
+    if (!sameId && !sameQty && product._id != null) {
+      setCart([...cart, product]);
+      setProduct(initialProduct);
+    }
+  }, [product]);
+
+  const handleProductMinus = () => {
+    if (product.qty <= 1) {
+      return setProduct({ ...product, qty: 1 });
+    }
+    setProduct({ ...product, qty: product.qty - 1 });
+  };
+
+  const handleProductPlus = () => {
+    setProduct({ ...product, qty: product.qty + 1 });
+  };
+
+  const makeId = (length) => {
+    var result = "";
+    var characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
+
+  const handleCart = () => {
+    setProduct({
+      ...product,
+      _id: makeId(10),
+      name: "Fall Limited Edition Sneakers",
+      price: 250,
+    });
+  };
+
   return (
     <section className="product">
       <div className="product-header">
@@ -38,14 +88,15 @@ function ProductDesc() {
       </div>
       <div className="product-action">
         <div className="product-quantity">
-          <div className="button-dec">-</div>
-          <p className="qty">0</p>
-          <div className="button-inc">+</div>
+          <div className="button-dec" onClick={() => handleProductMinus()}>
+            -
+          </div>
+          <p className="qty">{product.qty}</p>
+          <div className="button-inc" onClick={() => handleProductPlus()}>
+            +
+          </div>
         </div>
-        <div
-          className="product-add-cart"
-          // onClick={() => handleCart(cart, setCart)}
-        >
+        <div className="product-add-cart" onClick={() => handleCart()}>
           <div className="fill-cart">
             <svg
               width="22"

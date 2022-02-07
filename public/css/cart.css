@@ -61,6 +61,12 @@
   color: var(--black);
 }
 
+.cart-empty {
+  font-weight: 700;
+  padding: 1.875rem;
+  text-align: center;
+}
+
 .cart-checkout-button {
   display: flex;
   width: 100%;

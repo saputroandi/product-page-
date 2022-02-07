@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from "react";
-import { useOpenCart } from "../context/CartContext";
+import { useCart, useOpenCart } from "../context/CartContext";
 
 function Navigation() {
   const [visible, setVisible] = useState(false);
 
   const { cartVisible, setCartVisible } = useOpenCart();
+  const { cart, setCart } = useCart();
 
   const handleCart = () => {
     setCartVisible(!cartVisible);
@@ -59,7 +60,7 @@ function Navigation() {
                 fillRule="nonzero"
               />
             </svg>
-            {/* <span className="badge">1</span> */}
+            {cart.length >= 1 && <span className="badge">{cart.length}</span>}
           </div>
           <div className="avatar">
             <img src="images/image-avatar.png" />
