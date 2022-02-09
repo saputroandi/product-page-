@@ -76,7 +76,12 @@ export default function Cart() {
               );
             })}
           {cart.length > 0 && (
-            <div className="cart-checkout-button">
+            <div
+              className="cart-checkout-button"
+              onClick={() => {
+                alert("have a good day");
+              }}
+            >
               <p>Checkout</p>
             </div>
           )}

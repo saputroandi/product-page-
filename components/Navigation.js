@@ -80,11 +80,11 @@ function Navigation() {
             </svg>
           </div>
           <div className="mobile-menu-list">
-            <p>Collections</p>
-            <p>Men</p>
-            <p>Women</p>
-            <p>About</p>
-            <p>Contact</p>
+            <p onClick={closeMobileMenu}>Collections</p>
+            <p onClick={closeMobileMenu}>Men</p>
+            <p onClick={closeMobileMenu}>Women</p>
+            <p onClick={closeMobileMenu}>About</p>
+            <p onClick={closeMobileMenu}>Contact</p>
           </div>
         </div>
         <div className="mobile-overlay" onClick={closeMobileMenu}></div>

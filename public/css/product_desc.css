@@ -61,6 +61,7 @@
 .product-real-price {
   color: var(--grayish-blue);
   font-weight: 700;
+  text-decoration: line-through;
 }
 
 .product-quantity {

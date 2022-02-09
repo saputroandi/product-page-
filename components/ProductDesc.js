@@ -55,7 +55,7 @@ function ProductDesc() {
         ...product,
         _id: makeId(10),
         name: "Fall Limited Edition Sneakers",
-        price: 250,
+        price: 125,
       });
     }
   };
