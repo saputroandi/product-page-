@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useCart, useOpenCart } from "../context/CartContext";
 
 export default function Cart() {
   const { cart, setCart } = useCart();
   const { cartVisible, setCartVisible } = useOpenCart();
+  const modal = useRef();
 
   const removeProductFromCart = (_id) => {
     const newCart = cart.filter(
@@ -13,14 +14,16 @@ export default function Cart() {
     setCart(newCart);
   };
 
-  const handleVisibleCart = () => {
-    setCartVisible(false);
-  };
+  useEffect(() => {
+    window.addEventListener("click", (e) => {
+      if (modal.current != null && !modal.current.contains(e.target))
+        setCartVisible(false);
+    });
+  });
 
   return (
     <div>
-      <div className="cart-overlay" onClick={() => handleVisibleCart()}></div>
-      <div className="cart">
+      <div className="cart" ref={modal}>
         <div className="cart-header">
           <p className="cart-title">Cart</p>
         </div>
